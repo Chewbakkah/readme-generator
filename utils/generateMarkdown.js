@@ -19,4 +19,8 @@ console.log("ding");
 
 }
 
-module.exports = generateMarkdown;
+function testThis(name){
+  console.log(name);
+}
+
+module.exports = { generateMarkdown, testThis };

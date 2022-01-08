@@ -1,6 +1,9 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
+const answerData = [];
+
 
 // TODO: Create an array of questions for user input
 const promptQuestions = () =>{
@@ -75,7 +78,7 @@ const promptQuestions = () =>{
       },
       {
         type: 'input',
-        name: 'projectFeaturesVerify',
+        name: 'projectFeatures',
         message: 'Enter project highlights:',
       },
       {
@@ -88,7 +91,7 @@ const promptQuestions = () =>{
         type: 'input',
         name: 'projectContribInstruct',
         message: 'Enter project contribution guidelines:',
-        when: ({ projectFeaturesVerify }) => projectFeaturesVerify
+        when: ({ projectContribVerify }) => projectContribVerify
       },
       {
         type: 'input',
@@ -101,14 +104,24 @@ const promptQuestions = () =>{
         message: 'Enter relative filepath to project IMG:'
       },
 
-]);
+])
+.then(answers => {
+  answerData.push(answers);
+  const { name, email, projectTitle, projectDescription, projectInstallation, projectUsage, projectCollabVerify, projectCollabList, projectLicense, projectFeatures, projectContribVerify, projectContribInstruct, projectTest, projectIMG } = answerData[0];
+  
+});
 };
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  promptQuestions();
+  
+}
 
 // Function call to initialize app
 init();
+

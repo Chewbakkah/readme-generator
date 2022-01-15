@@ -4,27 +4,19 @@
 asdf
 ## Table Of Contents
 * [Installation Instructions](#Project-Installation-Instructions)
-* [Installation Instructions](#Project-Usage-Instructions)
-* [Installation Instructions](#Project-Collaborators)
-* [Installation Instructions](#Project-Features)
-* [Installation Instructions](#Contribution-Guidelines)
-* [Installation Instructions](#Project-Testing-Instructions)
-* [Installation Instructions](#Project-Snapshot)
-* [Installation Instructions](#License)
+* [Usage Instructions](#Project-Usage-Instructions)
+* [Collaborators](#Project-Collaborators)
+* [License Info](#License)
 ## Project-Installation-Instructions
-  asdf
+  asd
 ## Project-Usage-Instructions
-  asdf
-## Project-Collaborators
-    [chewbakkah](https://github.com/chewbakkah)    
-## Project-Features
-  asdf
-## Contribution-Guidelines
-  asdf
-## Project-Testing-Instructions
   adsf
-## Project-Snapshot
-![Project Snapshot](asdf)
+## Project-Collaborators
+  [chewbakkah](https://github.com/chewbakkah)    
+
+
+
+
 ## License
   This project is licensed under
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)

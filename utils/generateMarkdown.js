@@ -55,7 +55,7 @@ function renderCollabList(projectCollabVerify, projectCollabList) {
         "[" + collab[i] + "](https://github.com/" + collab[i] + ")    ";
     }
     return `## Project-Collaborators
-    ${collabStr}`;
+  ${collabStr}`;
   } else {
     return "";
   }

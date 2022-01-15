@@ -10,7 +10,7 @@ Install the inquirer package. Launch in command line with node index.js and foll
 
 
 ## Project Snapshot
-![Project Snapshot](../snapshot/snapshot.jpg)
+![Project Snapshot](./snapshot/snapshot.jpg)
 ## License
 This project is licensed under ![License](https://img.shields.io/badge/License-undefined-blue.svg)
 [More Info](https://choosealicense.com/licenses/)

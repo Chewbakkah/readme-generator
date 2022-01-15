@@ -1,5 +1,5 @@
 # ReadMeGenerator
-### Created by: Chewbakkah | ### [Github](https://github.com/Chewbakkah) | ### Email: chewbakkah@gmail.com
+### Created by: Chewbakkah | [Github](https://github.com/Chewbakkah) | Email: chewbakkah@gmail.com
 ## Description
 The goal of this project is to use Node to generate a professional readme markdown file for future projects.
 
@@ -9,10 +9,8 @@ The goal of this project is to use Node to generate a professional readme markdo
     Install the inquirer package. Launch in command line with node index.js and follow instructions.
 
 
-
-
 ## Project Snapshot
-    ![Project Snapshot](/snapshot/snapshot.jpg)
+    ![Project Snapshot](../snapshot/snapshot.jpg)
 ## License
-    This project is licensed under [![License](https://img.shields.io/badge/License-undefined-blue.svg)]
+    This project is licensed under ![License](https://img.shields.io/badge/License-undefined-blue.svg)
     [More Info](https://choosealicense.com/licenses/)

@@ -1,10 +1,25 @@
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicense(projectLicense) {
+function renderLicenseText(projectLicense) {
+  let insert = projectLicense;
   if (projectLicense !== "None") {
     return `## License
-    This project is licensed under [![License](https://img.shields.io/badge/License-${projectLicense}-blue.svg)]
-    [More Info](https://choosealicense.com/licenses/)`;
+  This project is licensed under`;
+  } else {
+    return "";
+  }
+}
+function renderLicenseBadge(projectLicense) {
+  if (projectLicense !== "None") {
+    return `![License](https://img.shields.io/badge/License-${projectLicense}-blue.svg)`;
+  } else {
+    return "";
+  }
+}
+
+function renderLicenseLink(projectLicense) {
+  if (projectLicense !== "None") {
+    return `[More Info](https://choosealicense.com/licenses/)`;
   } else {
     return "";
   }
@@ -13,8 +28,8 @@ function renderLicense(projectLicense) {
 function renderInstallation(projectInstallation){
   if (projectInstallation !== '') {
     return `## Project Installation Instructions
-    ${projectInstallation}`
-     ;
+  ${projectInstallation}`
+   ;
   } else {
     return "";
   }
@@ -23,8 +38,8 @@ function renderInstallation(projectInstallation){
 function renderUsage(projectUsage){
   if (projectUsage !== '') {
     return `## Project Usage Instructions
-    ${projectUsage}`
-     ;
+  ${projectUsage}`
+   ;
   } else {
     return "";
   }
@@ -50,7 +65,7 @@ function renderCollabList(projectCollabVerify, projectCollabList){
 function renderFeatures(projectFeatures){
   if (projectFeatures !== '') {
     return `## Project Features
-    ${projectFeatures}`
+  ${projectFeatures}`
      ;
   } else {
     return "";
@@ -60,7 +75,7 @@ function renderFeatures(projectFeatures){
 function renderContrib(projectContribVerify, projectContribInstruct){
   if (projectContribVerify == true) {
     return `## Contribution Guidelines
-    ${projectContribInstruct}`
+  ${projectContribInstruct}`
      ;
   } else {
     return "";
@@ -70,7 +85,7 @@ function renderContrib(projectContribVerify, projectContribInstruct){
 function renderTest(projectTest){
   if (projectTest !== '') {
     return `## Project Testing Instructions
-    ${projectTest}`
+  ${projectTest}`
      ;
   } else {
     return "";
@@ -80,7 +95,7 @@ function renderTest(projectTest){
 function renderIMG(projectIMG){
   if (projectIMG !== '') {
     return `## Project Snapshot
-    ![Project Snapshot](${projectIMG})`
+![Project Snapshot](${projectIMG})`
      ;
   } else {
     return "";
@@ -97,7 +112,7 @@ function renderIMG(projectIMG){
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.projectTitle}
-### Created by: ${data.name} | ### [Github](https://github.com/${data.name}) | ### Email: ${
+### Created by: ${data.name} | [Github](https://github.com/${data.name}) | Email: ${
     data.email
   }
 ## Description
@@ -110,7 +125,9 @@ ${renderFeatures(data.projectFeatures)}
 ${renderContrib(data.projectContribInstruct)}
 ${renderTest(data.projectTest)}
 ${renderIMG(data.projectIMG)}
-${renderLicense(data.license)}
+${renderLicenseText(data.projectLicense)}
+${renderLicenseBadge(data.projectLicense)}
+${renderLicenseLink(data.projectLicense)}
 `;
 }
 

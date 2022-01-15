@@ -119,32 +119,10 @@ const questions = [
       {
         type: "input",
         name: "projectIMG",
-        message: "Enter relative filepath to project IMG:",
+        message: "Enter hosted filepath to project IMG:",
       },
     ];
-    // .then((data) => {
-    //   console.log(data);
-    //   answerData.push(data);
-    //   // const {
-    //   //   name,
-    //   //   email,
-    //   //   projectTitle,
-    //   //   projectDescription,
-    //   //   projectInstallation,
-    //   //   projectUsage,
-    //   //   projectCollabVerify,
-    //   //   projectCollabList,
-    //   //   projectLicense,
-    //   //   projectFeatures,
-    //   //   projectContribVerify,
-    //   //   projectContribInstruct,
-    //   //   projectTest,
-    //   //   projectIMG,
-    //   // } = answerData[0];
 
-//       generateMarkdown(data);
-//     });
-// };
 
 // TODO: Create a function to write README file
 const writeToFile = (fileName, data) => {

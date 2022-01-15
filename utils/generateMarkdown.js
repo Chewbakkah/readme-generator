@@ -1,26 +1,79 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicense(projectLicense) {
+  if (projectLicense !== "None") {
+    return `## License
+    This project is licensed under [![License](https://img.shields.io/badge/License-${projectLicense}-blue.svg)].
+    [More Info](https://choosealicense.com/licenses/)`;
+  } else {
+    return "";
+  }
+}
+
+function renderInstallation(projectInstallation){
+  if (projectInstallation !== '') {
+    return `## Project Installation Instructions
+    ${projectInstallation}`;
+  } else {
+    return "";
+  }
+}
+
+function renderUsage(projectUsage){
+  if (projectUsage !== '') {
+    return `## Project Usage Instructions
+    ${projectUsage}`;
+  } else {
+    return "";
+  }
+}
+
+function renderCollabList(projectCollabVerify, projectCollabList){
+  if (projectCollabVerify == true) {
+    let collabStr = '';
+    let collab = projectCollabList.split(',').map(function(item){
+      return item.trim();
+    });
+    for(i=0; i<collab.length; i++){
+      collabStr += "[" + collab[i] + "](https://github.com/" + collab[i] + ")    "
+    }
+    return `## Project Collaborators
+    ${collabStr}`;
+  } else {
+    return "";
+  }
+}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(answerData) {
-//   return `# ${data.title}
+function generateMarkdown(data) {
+  return `# ${data.projectTitle}
+### Created by: ${data.name} | ### [Github](https://github.com/${data.name}) | ### Email: ${
+    data.email
+  }
+## Description
+${data.projectDescription}
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#installation)
+* [Credits](#installation)
 
-// `;
-console.log("ding");
+${renderInstallation(data.projectInstallation)}
 
+${renderUsage(data.projectUsage)}
+
+${renderCollabList(data.projectCollabList)}
+
+${renderFeatures(data.projectFeatures)}
+
+${renderContrib(data.projectContribInstruct)}
+
+${renderTest(data.projectTest)}
+
+${renderIMG(data.projectIMG)}
+
+${renderLicense(data.license)}
+
+`;
 }
 
-function testThis(name){
-  console.log(name);
-}
-
-module.exports = { generateMarkdown, testThis };
+module.exports = { generateMarkdown };

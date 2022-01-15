@@ -143,9 +143,8 @@ ${TOC}`;
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.projectTitle}
-### Created by: ${data.name} | [Github](https://github.com/${
-    data.name
-  }) | Email: ${data.email}
+### For Questions Contact:
+### ${data.name} | [Github](https://github.com/${data.name}) | Email: ${data.email}
 ## Description
 ${data.projectDescription}
 ${renderTableOfContents(

@@ -142,9 +142,8 @@ const promptQuestions = () => {
         projectTest,
         projectIMG,
       } = answerData[0];
-      console.log(projectTest);
-      console.log(projectCollabList);
-      // generateMarkdown(data);
+
+      generateMarkdown(data);
     });
 };
 

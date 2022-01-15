@@ -44,6 +44,49 @@ function renderCollabList(projectCollabVerify, projectCollabList){
   }
 }
 
+function renderFeatures(projectFeatures){
+  if (projectFeatures !== '') {
+    return `## Project Features
+    ${projectFeatures}`;
+  } else {
+    return "";
+  }
+}
+
+function renderContrib(projectContribVerify, projectContribInstruct){
+  if (projectContribVerify == true) {
+    return `## Contribution Guidelines
+    ${projectContribInstruct}`;
+  } else {
+    return "";
+  }
+}
+
+function renderTest(projectTest){
+  if (projectTest !== '') {
+    return `## Project Testing Instructions
+    ${projectTest}`;
+  } else {
+    return "";
+  }
+}
+
+function renderIMG(projectIMG){
+  if (projectIMG !== '') {
+    return `## Project Snapshot
+    ![Project Snapshot](${projectTest})`;
+  } else {
+    return "";
+  }
+}
+
+
+// ## Table of Contents
+// * [Installation](#installation)
+// * [Usage](#installation)
+// * [Credits](#installation)
+
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.projectTitle}
@@ -52,10 +95,6 @@ function generateMarkdown(data) {
   }
 ## Description
 ${data.projectDescription}
-## Table of Contents
-* [Installation](#installation)
-* [Usage](#installation)
-* [Credits](#installation)
 
 ${renderInstallation(data.projectInstallation)}
 

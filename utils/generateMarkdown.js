@@ -112,25 +112,25 @@ function renderTableOfContents(
     TOC += "* [Installation Instructions](#Project-Installation-Instructions)\n";
   }
   if (projectUsage !== "") {
-    TOC += "* [Installation Instructions](#Project-Usage-Instructions)\n";
+    TOC += "* [Usage Instructions](#Project-Usage-Instructions)\n";
   }
   if (projectCollabVerify == true) {
-    TOC += "* [Installation Instructions](#Project-Collaborators)\n";
+    TOC += "* [Collaborators](#Project-Collaborators)\n";
   }
   if (projectFeatures !== "") {
-    TOC += "* [Installation Instructions](#Project-Features)\n";
+    TOC += "* [Features](#Project-Features)\n";
   }
   if (projectContribVerify == true) {
-    TOC += "* [Installation Instructions](#Contribution-Guidelines)\n";
+    TOC += "* [Contribution Guidelines](#Contribution-Guidelines)\n";
   }
   if (projectTest !== "") {
-    TOC += "* [Installation Instructions](#Project-Testing-Instructions)\n";
+    TOC += "* [Testing Instructions](#Project-Testing-Instructions)\n";
   }
   if (projectIMG !== "") {
-    TOC += "* [Installation Instructions](#Project-Snapshot)\n";
+    TOC += "* [Project Snapshot](#Project-Snapshot)\n";
   }
   if (projectLicense !== "") {
-    TOC += "* [Installation Instructions](#License)";
+    TOC += "* [License Info](#License)";
   }
   return `## Table Of Contents
 ${TOC}`;

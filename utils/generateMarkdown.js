@@ -3,7 +3,7 @@
 function renderLicense(projectLicense) {
   if (projectLicense !== "None") {
     return `## License
-    This project is licensed under [![License](https://img.shields.io/badge/License-${projectLicense}-blue.svg)].
+    This project is licensed under [![License](https://img.shields.io/badge/License-${projectLicense}-blue.svg)]
     [More Info](https://choosealicense.com/licenses/)`;
   } else {
     return "";
@@ -13,7 +13,8 @@ function renderLicense(projectLicense) {
 function renderInstallation(projectInstallation){
   if (projectInstallation !== '') {
     return `## Project Installation Instructions
-    ${projectInstallation}`;
+    ${projectInstallation}`
+     ;
   } else {
     return "";
   }
@@ -22,7 +23,8 @@ function renderInstallation(projectInstallation){
 function renderUsage(projectUsage){
   if (projectUsage !== '') {
     return `## Project Usage Instructions
-    ${projectUsage}`;
+    ${projectUsage}`
+     ;
   } else {
     return "";
   }
@@ -38,7 +40,8 @@ function renderCollabList(projectCollabVerify, projectCollabList){
       collabStr += "[" + collab[i] + "](https://github.com/" + collab[i] + ")    "
     }
     return `## Project Collaborators
-    ${collabStr}`;
+    ${collabStr}`
+     ;
   } else {
     return "";
   }
@@ -47,7 +50,8 @@ function renderCollabList(projectCollabVerify, projectCollabList){
 function renderFeatures(projectFeatures){
   if (projectFeatures !== '') {
     return `## Project Features
-    ${projectFeatures}`;
+    ${projectFeatures}`
+     ;
   } else {
     return "";
   }
@@ -56,7 +60,8 @@ function renderFeatures(projectFeatures){
 function renderContrib(projectContribVerify, projectContribInstruct){
   if (projectContribVerify == true) {
     return `## Contribution Guidelines
-    ${projectContribInstruct}`;
+    ${projectContribInstruct}`
+     ;
   } else {
     return "";
   }
@@ -65,7 +70,8 @@ function renderContrib(projectContribVerify, projectContribInstruct){
 function renderTest(projectTest){
   if (projectTest !== '') {
     return `## Project Testing Instructions
-    ${projectTest}`;
+    ${projectTest}`
+     ;
   } else {
     return "";
   }
@@ -74,7 +80,8 @@ function renderTest(projectTest){
 function renderIMG(projectIMG){
   if (projectIMG !== '') {
     return `## Project Snapshot
-    ![Project Snapshot](${projectTest})`;
+    ![Project Snapshot](${projectIMG})`
+     ;
   } else {
     return "";
   }
@@ -97,21 +104,13 @@ function generateMarkdown(data) {
 ${data.projectDescription}
 
 ${renderInstallation(data.projectInstallation)}
-
 ${renderUsage(data.projectUsage)}
-
 ${renderCollabList(data.projectCollabList)}
-
 ${renderFeatures(data.projectFeatures)}
-
 ${renderContrib(data.projectContribInstruct)}
-
 ${renderTest(data.projectTest)}
-
 ${renderIMG(data.projectIMG)}
-
 ${renderLicense(data.license)}
-
 `;
 }
 

@@ -3,11 +3,10 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const { generateMarkdown } = require("./utils/generateMarkdown");
 const answerData = [];
+let saveFile = "";
 
 // TODO: Create an array of questions for user input
-const promptQuestions = () => {
-  return inquirer
-    .prompt([
+const questions = [
       {
         type: "input",
         name: "warning",
@@ -122,38 +121,47 @@ const promptQuestions = () => {
         name: "projectIMG",
         message: "Enter relative filepath to project IMG:",
       },
-    ])
-    .then((data) => {
-      console.log(data);
-      answerData.push(data);
-      const {
-        name,
-        email,
-        projectTitle,
-        projectDescription,
-        projectInstallation,
-        projectUsage,
-        projectCollabVerify,
-        projectCollabList,
-        projectLicense,
-        projectFeatures,
-        projectContribVerify,
-        projectContribInstruct,
-        projectTest,
-        projectIMG,
-      } = answerData[0];
+    ];
+    // .then((data) => {
+    //   console.log(data);
+    //   answerData.push(data);
+    //   // const {
+    //   //   name,
+    //   //   email,
+    //   //   projectTitle,
+    //   //   projectDescription,
+    //   //   projectInstallation,
+    //   //   projectUsage,
+    //   //   projectCollabVerify,
+    //   //   projectCollabList,
+    //   //   projectLicense,
+    //   //   projectFeatures,
+    //   //   projectContribVerify,
+    //   //   projectContribInstruct,
+    //   //   projectTest,
+    //   //   projectIMG,
+    //   // } = answerData[0];
 
-      generateMarkdown(data);
-    });
-};
+//       generateMarkdown(data);
+//     });
+// };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeToFile = (fileName, data) => {
+  let file = "./saved-readmes/README-" + saveFile + ".md";
+  fs.writeFile(file, data, (err) =>
+    err ? console.error(err) : console.log("Check saved-readmes for new file.")
+  );
+};
+
+
 
 // TODO: Create a function to initialize app
 function init() {
-  promptQuestions();
+  inquirer.prompt(questions).then(function (data) {
+    saveFile = data.projectTitle;
+  writeToFile("README.md", generateMarkdown(data));
+});
 }
-
 // Function call to initialize app
 init();
